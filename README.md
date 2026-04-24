@@ -110,37 +110,38 @@ It communicates with the backend API to:
 
 ---
 
-## Project Structure
+## ## Project Structure
 
-
+```
 Agent/
+│
 ├── backend/
-│ ├── data/
-│ ├── agents.py
-│ ├── config.py
-│ ├── database.py
-│ ├── main.py
-│ ├── memory.py
-│ ├── rag.py
-│ ├── tools.py
-│ ├── requirements.txt
-│ ├── requirements.docker.txt
-│ ├── Dockerfile
-│ ├── faiss_index.faiss
-│ ├── faiss_index.meta.pkl
-│ └── retail_researcher.db
+│   ├── data/
+│   ├── agents.py
+│   ├── config.py
+│   ├── database.py
+│   ├── main.py
+│   ├── memory.py
+│   ├── rag.py
+│   ├── tools.py
+│   ├── requirements.txt
+│   ├── requirements.docker.txt
+│   ├── Dockerfile
+│   ├── faiss_index.faiss
+│   ├── faiss_index.meta.pkl
+│   └── retail_researcher.db
 │
 ├── frontend/
-│ ├── index.html
-│ ├── script.js
-│ ├── style.css
-│ ├── nginx.conf
-│ └── Dockerfile
+│   ├── index.html
+│   ├── script.js
+│   ├── style.css
+│   ├── nginx.conf
+│   └── Dockerfile
 │
 ├── docker-compose.yml
 ├── README.md
 └── .gitignore
-
+```
 
 ---
 
