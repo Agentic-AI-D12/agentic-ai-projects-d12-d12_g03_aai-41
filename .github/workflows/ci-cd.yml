@@ -1,0 +1,36 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  docker-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Create .env file
+      run: |
+        echo "OPENAI_API_KEY=dummy_key" >> .env
+
+    - name: Build Containers
+      run: docker compose build
+
+    - name: Run Containers
+      run: docker compose up -d
+
+    - name: Wait for services
+      run: sleep 15
+
+    - name: Health Check
+      run: curl http://localhost:8000 || exit 1
+
+    - name: Show logs if failed
+      if: failure()
+      run: docker compose logs
+
+    - name: Stop containers
+      run: docker compose down
